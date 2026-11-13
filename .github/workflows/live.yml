@@ -1,0 +1,28 @@
+name: Live API check
+
+# Started by hand. It publishes at most three articles and soft-deletes them.
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: glanote-live-check
+  cancel-in-progress: false
+
+jobs:
+  live:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Publish and delete at most three test articles
+        env:
+          GLANOTE_LIVE: "1"
+        run: python3 tests/live_opt_in.py --confirm-live

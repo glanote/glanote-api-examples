@@ -1,0 +1,21 @@
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+node_modules/
+.DS_Store
+.env
+.env.*
+*.log
+qr.svg
+demo.png
+
+# Management credentials. The clients also refuse to overwrite an existing file.
+.glanote-edit-key.json
+.glanote-telegraph-token.json
+.glanote-view-password
+*.edit-key.json
+*.access-token.json
+glanote-secrets/
+*.editkey
+*.token
