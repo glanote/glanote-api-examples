@@ -1,0 +1,3 @@
+* text=auto eol=lf
+shell/glanote.sh text eol=lf
+tests/test_glanote_sh.sh text eol=lf
